@@ -67,7 +67,7 @@ class Gogoanime
     end
 
     def autocomplete(str)
-        document = open("https://ajax.gogocdn.net/site/loadAjaxSearch?keyword=#{str.downcase.gsub(' ', '+')}&id=-1&link_web=https%3A%2F%2Fwww19.gogoanime.io%2F").read
+        document = open("https://ajax.gogocdn.net/site/loadAjaxSearch?keyword=#{str.downcase.gsub(' ', '+')}").read
         document = Nokogiri::HTML(JSON.parse(document)['content'])
         results = []
         for item in document.css('div.list_search_ajax') do
