@@ -14,7 +14,7 @@ gem install gogoanime
 ```ruby
 require 'gogoanime'
 
-g = Gogoanime.new
+g = Gogoanime::scraper.new
 
 g.recent()
 # => [{:image_url=>"...", :title=>"...", :episode_url=>"...", :episode=>1, :anime_path=>"..."}, ...]
