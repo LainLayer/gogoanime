@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'json'
 
 module Gogoanime
-    class scraper
+    class Scraper
         def recent(pages=1)
             document = fetch(BASE_URL)
             result = []
