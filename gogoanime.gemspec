@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
     s.files       = ["lib/gogoanime.rb"]
     s.homepage    =
       'https://rubygems.org/gems/gogoanime'
-    s.license       = 'WTFPL'
+    s.license       = 'AGPL-3.0'
   end
