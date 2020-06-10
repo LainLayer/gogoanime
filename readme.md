@@ -1,6 +1,6 @@
 # gogoanime
 
-Foobar is a gem for scraping data from gogoanime.io
+gogoanime is a gem for scraping data from gogoanime.io
 
 ## Installation
 
