@@ -61,7 +61,8 @@ module Gogoanime
                 results << {
                     image_url: item.css('div.img a img')[0]['src'],
                     title:     item.css('p.name a')[0].text,
-                    released:  item.css('p.released')[0].text.split(':').last.strip.to_i
+                    released:  item.css('p.released')[0].text.split(':').last.strip.to_i,
+                    path:      item.css('p.name a')[0]['href'].split('/').last
                 }
             end
             return results
