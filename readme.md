@@ -16,7 +16,7 @@ require 'gogoanime'
 
 g = Gogoanime::Scraper.new
 
-g.recent()
+g.recent(3) # <- number of pages
 # => [{:image_url=>"...", :title=>"...", :episode_url=>"...", :episode=>1, :anime_path=>"..."}, ...]
 
 g.anime('naruto')
@@ -42,5 +42,4 @@ g.autocomplete('naruto')
 Pull requests are welcome.
 
 ## TODO
-* add multiple page support
 * fix japanese encoding

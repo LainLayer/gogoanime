@@ -5,19 +5,31 @@ require 'json'
 module Gogoanime
     class Scraper
         def recent(pages=1)
-            document = fetch(BASE_URL)
+            
             result = []
-            document.css('ul.items li').each do |item|
-                a = item.css('a')[0]
-                result << {
-                    image_url:   item.css('img')[0]['src'],
-                    title:       a['title'],
-                    episode_url: a['href'],
-                    episode:     item.css('p.episode').text.split(' ').last.to_i,
-                    anime_path:  a['href'].split('-episode-').first
-                }
+
+            pages.times do |i|
+                result << Thread.new do
+                    tmp = []
+                    document = fetch("#{BASE_URL}?page=#{i}")
+                    document.css('ul.items li').each do |item|
+                        a = item.css('a')[0]
+                        tmp << {
+                            image_url:   item.css('img')[0]['src'],
+                            title:       a['title'],
+                            episode_url: a['href'],
+                            episode:     item.css('p.episode').text.split(' ').last.to_i,
+                            anime_path:  a['href'].split('-episode-').first
+                        }
+                    end
+                    Thread.current[:output] = tmp
+                end
             end
-            return result
+            
+            return result.map do |x|
+                x.join
+                x = x[:output]
+            end.flatten
         end
 
         def anime(path)
