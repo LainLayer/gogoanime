@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name        = 'gogoanime'
-    s.version     = '0.0.5'
+    s.version     = '0.0.6'
     s.date        = '2020-04-06'
     s.summary     = "gogoanime.io scraper"
     s.description = "A simple gem for scraping data from gogoanime.io"

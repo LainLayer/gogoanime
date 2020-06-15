@@ -11,7 +11,7 @@ module Gogoanime
             pages.times do |i|
                 result << Thread.new do
                     tmp = []
-                    document = fetch("#{BASE_URL}?page=#{i}")
+                    document = fetch("#{BASE_URL}?page=#{i+1}")
                     document.css('ul.items li').each do |item|
                         a = item.css('a')[0]
                         tmp << {
