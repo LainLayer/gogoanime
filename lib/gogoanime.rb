@@ -97,7 +97,7 @@ module Gogoanime
 
         private
 
-        BASE_URL = "https://www.gogoanime.io/"
+        BASE_URL = "https://www1.gogoanime.movie/"
 
         def fetch(url)
             return Nokogiri::HTML(open(url).read)
